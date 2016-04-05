@@ -1,0 +1,9 @@
+.scroll {
+	display: block;
+	width: 75%;
+	background-color: #f6f6d5;
+	margin: auto;
+}
+body {
+	background-color: black;
+}
