@@ -1,9 +1,16 @@
 # insanealec
 
 > Vue project for github pages
-> [insanealec.com](http://insanealec.com/)
 
-## Build Setup
+## Build and Deploy
+
+1. Make sure to follow instruction below first so that everything runs okay.
+2. Run the deploy script 
+	- `./deploy.sh` to run in git bash
+3. This script will run the build, commit, push, and subtree push commands automatically.
+4. [insanealec.com](http://insanealec.com/) to see deployed distribution.
+
+## Build Setup (First Time Setup)
 
 ``` bash
 # install dependencies
