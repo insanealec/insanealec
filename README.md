@@ -1,4 +1,4 @@
-# insanealec.github.io
+# insanealec
 
 > Vue project for github pages
 > [insanealec.com](http://insanealec.com/)
