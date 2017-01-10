@@ -4,8 +4,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
 import Routes from './Routes'
-import Home from './components/Home'
-import Snake from './components/Snake'
 
 Vue.use(VueRouter);
 

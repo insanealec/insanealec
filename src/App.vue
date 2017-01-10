@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <p>
-      <router-link to="/">Home</router-link>
-      <router-link to="/snake">Play Snake</router-link>
-    </p>
-      
-    <router-view></router-view>
+    <VueNav></VueNav>
+    
+    <div class="container">
+      <div class="row">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import VueNav from './includes/VueNav'
 
 export default {
   name: 'app',
   components: {
+    VueNav
   },
   mounted: function() {
     //console.log("hello");
@@ -22,12 +25,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
 </style>
