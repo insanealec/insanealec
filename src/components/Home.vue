@@ -14,7 +14,10 @@
 </script>
 
 <style>
-	/*body {
+	body {
 		background-image: url('../assets/I.jpg');
-	}*/
+	}
+	.card {
+		width: 100%;
+	}
 </style>
