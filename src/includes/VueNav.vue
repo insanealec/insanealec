@@ -1,27 +1,26 @@
 <template>
-	<nav class="navbar navbar-default navbar-static-top">
-        <div class="navbar-header">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+	<router-link class="navbar-brand" to="/">insanealec</router-link>
 
-            <!-- Branding Image -->
-            <router-link to="/" class="navbar-brand">insanealec</router-link>
-        </div>
-
-        <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-
-                <li><router-link to="/snake">Snake</a></li>
-                <li><router-link to="/games">Games</a></li>
-
-            </ul>
-        </div>
-    </nav>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<router-link class="nav-link" to="/snake">Play Snake</router-link>
+			</li>
+			<li class="nav-item">
+				<router-link class="nav-link disabled" to="/games">Games</router-link>
+			</li>
+		</ul>
+	</div>
+</nav>
 </template>
+
+<style type="text/css">
+    .navbar {
+        margin-bottom: 20px;
+    }
+</style>
