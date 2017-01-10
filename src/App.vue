@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <hello></hello>
+    <p>
+      <router-link to="/">Home</router-link>
+      <router-link to="/snake">Play Snake</router-link>
+    </p>
+      
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
 
 export default {
   name: 'app',
   components: {
-    Hello
+  },
+  mounted: function() {
+    //console.log("hello");
   }
 }
 </script>
