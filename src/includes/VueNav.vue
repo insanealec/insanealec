@@ -12,7 +12,7 @@
 				<router-link class="nav-link" to="/snake">Play Snake</router-link>
 			</li>
 			<li class="nav-item">
-				<router-link class="nav-link disabled" to="/games">Games</router-link>
+				<router-link class="nav-link" to="/portfolio">Portfolio</router-link>
 			</li>
 		</ul>
 	</div>

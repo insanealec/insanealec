@@ -218,8 +218,4 @@ export default{
 canvas {
    display: inline;
 }
-
-.wide {
-	width: 100%
-}
 </style>

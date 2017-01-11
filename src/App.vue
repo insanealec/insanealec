@@ -31,4 +31,7 @@ export default {
 	.card {
 		width: 100%;
 	}
+	.wide {
+		width: 100%
+	}
 </style>

@@ -4,7 +4,7 @@
 			Welcome!
 		</div>
 		<div class="card-block">
-			<p class="card-text">Welcome to my website!</p>
+			<p class="card-text">Maybe blog stuff will go here, I have no idea.</p>
 		</div>
 	</div>
 </template>
