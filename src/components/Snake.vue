@@ -1,11 +1,30 @@
 <template>
-	<div class="container">
-        <div class="row">
-            <div id="panelList" class="col-md-8 col-md-offset-2">
-				<canvas id="canvas" width="450" height="450"></canvas>
-			</div>
-		</div>
+<div class="card">
+	<div class="card-header">
+		Play using keyboard arrows.
 	</div>
+	<div class="card-block">
+	    <div id="panelList">
+			<canvas id="canvas" width="450" height="450"></canvas>
+		</div>
+		<h2 class="card-title">Best Score: {{ max_score }}</h2>
+		<p class="card-text">
+			This score only lasts as long as you are on the page.
+		</p>
+		<p class="card-text">
+			If you don't see the game, try refreshing the page.
+		</p>
+		<p class="card-text">
+			Code for javascript snake game was originally found
+			<a href="http://thecodeplayer.com/walkthrough/html5-game-tutorial-make-a-snake-game-using-html5-canvas-jquery">here</a>.
+		</p>
+		<p class="card-text">
+			But I altered it to work with Vue.js.
+			It's still not great, but you can find the code for this page
+			<a href="https://github.com/insanealec/insanealec/blob/master/src/components/Snake.vue">on my github</a>.
+		</p>
+	</div>
+</div>
 </template>
 
 
@@ -34,6 +53,8 @@ export default{
 			//The snake; an array of cells
 			snakeLength: 5,
 			snake_array: [],
+			//The best score for this play session.
+			max_score: 0,
 		};
 	},
 	methods: {
@@ -147,6 +168,8 @@ export default{
 			//Lets paint the score
 			var score_text = "Score: " + this.score;
 			this.ctx.fillText(score_text, 5, this.h-5);
+			//Set max score.
+			this.checkHighScore();
 		},
 		paint_cell: function(x, y) {
 			//Lets first create a generic function to paint cells
@@ -174,6 +197,23 @@ export default{
 			else if(key == "40" && this.d != "up") this.d = "down";
 			//The snake is now keyboard controllable
 		},
+		checkHighScore: function() {
+			if(this.score > this.max_score)
+			{
+				this.max_score = this.score;
+			}
+		},
 	}
 }
 </script>
+
+<style>
+#panelList {
+   width: 100%;
+   text-align:center;
+}
+
+canvas {
+   display: inline;
+}
+</style>

@@ -1,23 +1,17 @@
 <template>
 	<div class="card">
 		<div class="card-header">
-			Welcome Home
+			Welcome To Me
 		</div>
 		<div class="card-block">
 			<p class="card-text">Welcome to my website!</p>
 		</div>
 	</div>
-</template
+</template>
 
 <script>
 
 </script>
 
 <style>
-	body {
-		background-image: url('../assets/I.jpg');
-	}
-	.card {
-		width: 100%;
-	}
 </style>
