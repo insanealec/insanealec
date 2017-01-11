@@ -26,7 +26,7 @@ export default {
 
 <style>
 	body {
-		background-image: url('./assets/I.jpg');
+		background-image: url('./assets/TobyAndCharlie.jpg');
 	}
 	.card {
 		width: 100%;
