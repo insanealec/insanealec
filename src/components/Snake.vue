@@ -1,28 +1,30 @@
 <template>
-<div class="card">
-	<div class="card-header">
-		Play using keyboard arrows.
+<div class="wide">
+    <div id="panelList">
+		<canvas id="canvas" width="450" height="450"></canvas>
 	</div>
-	<div class="card-block">
-	    <div id="panelList">
-			<canvas id="canvas" width="450" height="450"></canvas>
+	<div class="card">
+		<div class="card-header" data-toggle="collapse" data-target="#gameInfo">
+			Play using keyboard arrows. Click here to expand this card for more info.
 		</div>
-		<h2 class="card-title">Best Score: {{ max_score }}</h2>
-		<p class="card-text">
-			This score only lasts as long as you are on the page.
-		</p>
-		<p class="card-text">
-			If you don't see the game, try refreshing the page.
-		</p>
-		<p class="card-text">
-			Code for javascript snake game was originally found
-			<a href="http://thecodeplayer.com/walkthrough/html5-game-tutorial-make-a-snake-game-using-html5-canvas-jquery">here</a>.
-		</p>
-		<p class="card-text">
-			But I altered it to work with Vue.js.
-			It's still not great, but you can find the code for this page
-			<a href="https://github.com/insanealec/insanealec/blob/master/src/components/Snake.vue">on my github</a>.
-		</p>
+		<div class="card-block collapse" id="gameInfo">
+			<h2 class="card-title">Best Score: {{ max_score }}</h2>
+			<p class="card-text">
+				This score only lasts as long as you are on the page.
+			</p>
+			<p class="card-text">
+				If you don't see the game, try refreshing the page.
+			</p>
+			<p class="card-text">
+				Code for javascript snake game was originally found
+				<a href="http://thecodeplayer.com/walkthrough/html5-game-tutorial-make-a-snake-game-using-html5-canvas-jquery">here</a>.
+			</p>
+			<p class="card-text">
+				But I altered it to work with Vue.js.
+				It's still not great, but you can find the code for this page
+				<a href="https://github.com/insanealec/insanealec/blob/master/src/components/Snake.vue">on my github</a>.
+			</p>
+		</div>
 	</div>
 </div>
 </template>
@@ -215,5 +217,9 @@ export default{
 
 canvas {
    display: inline;
+}
+
+.wide {
+	width: 100%
 }
 </style>
