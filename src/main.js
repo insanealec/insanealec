@@ -17,3 +17,11 @@ const app = new Vue({
   ...App,
   router,
 })
+
+
+//Stuff for jquery
+$(document).on('click','.navbar',function(e) {
+    if( $(e.target).is('a') ) {
+        $('.navbar-collapse').collapse('hide');
+    }
+});
