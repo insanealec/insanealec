@@ -4,6 +4,21 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
 import Routes from './Routes'
+//Allows markup parsing via marked(input, {options}) function.
+window.marked = require('marked');
+
+//Create our database access.
+var firebase = require('firebase');
+var config = {
+	apiKey: "apiKey",
+	// authDomain: "insanealec.firebaseapp.com",
+	databaseURL: "https://insanealec-265cd.firebaseio.com/",
+	// storageBucket: "bucket.appspot.com"
+};
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+window.database = firebase.database();
 
 Vue.use(VueRouter);
 
