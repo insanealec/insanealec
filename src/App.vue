@@ -32,6 +32,12 @@ export default {
 		width: 100%;
 	}
 	.wide {
-		width: 100%
+		width: 100%;
+	}
+	html, body, #app, .row {
+		height: 100%;
+	}
+	.container {
+		height: 75%;
 	}
 </style>

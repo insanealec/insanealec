@@ -8,12 +8,13 @@ import Routes from './Routes'
 window.marked = require('marked');
 
 //Create our database access.
-var firebase = require('firebase');
+window.firebase = require('firebase');
 var config = {
-	apiKey: "apiKey",
-	// authDomain: "insanealec.firebaseapp.com",
-	databaseURL: "https://insanealec-265cd.firebaseio.com/",
-	// storageBucket: "bucket.appspot.com"
+  apiKey: "AIzaSyDwcJJMROC2Vvr_LWYD9xR8oJpyzsHHG7M",
+  authDomain: "insanealec-265cd.firebaseapp.com",
+  databaseURL: "https://insanealec-265cd.firebaseio.com",
+  storageBucket: "insanealec-265cd.appspot.com",
+  messagingSenderId: "837052494412"
 };
 firebase.initializeApp(config);
 
