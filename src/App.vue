@@ -26,10 +26,11 @@ export default {
 
 <style>
 	body {
-		background-image: url('./assets/TobyAndCharlie.jpg');
+		/*background-image: url('./assets/TobyAndCharlie.jpg');*/
 	}
 	.card {
 		width: 100%;
+		margin-bottom: 20px;
 	}
 	.wide {
 		width: 100%;

@@ -15,7 +15,6 @@
   "dependencies": {
     "firebase": "^3.6.5",
     "marked": "^0.3.6",
-    "quill": "^1.1.10",
     "vue": "^2.1.0",
     "vue-router": "^2.1.1"
   },

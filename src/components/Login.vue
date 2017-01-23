@@ -55,14 +55,6 @@ export default {
 			}
 		});
 	},
-	watch: {
-		email: function(e) {
-			this.email = e;
-		},
-		password: function(p) {
-			this.password = p;
-		}
-	}
 }
 </script>
 

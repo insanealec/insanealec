@@ -1,67 +1,46 @@
 <template>
 <div class="card">
-	<div class="card-header">Title: <input id="title"></div>
-	<div id="toolbar">
-		<!--  -->
+	<div class="card-header">
+		Title:&nbsp;
+		<input v-model="title">
+		<button @click="switchMode()" class="preview">Preview Markdown</button>
 	</div>
-	<div id="editor">
-		<!--  -->
-	</div>
+
+	<textarea v-show="!previewMode" v-model="body" id="editor"></textarea>
+	<div v-show="previewMode" v-html="compiledMarkdown"></div>
 
 	<button @click="saveContent" class="btn btn-primary">Save</button>
 </div>
 </template>
 
 <script>
-var Quill = require("Quill");
-
 export default {
 	data: function () {
 		return {
-			quill: {},
+			title: "",
+			body: "",
+			previewMode: false,
 		}
 	},
 	methods: {
 		saveContent: function() {
-			var title = $('#title').val();
-			var body = this.quill.getContents();
-			console.log(body);
-			// database.ref('posts/'+title).set({
-			// 	title: title,
-			// 	body: body,
-			// });
+			database.ref('posts/'+this.title).set({
+				title: this.title,
+				body: this.body,
+			});
 		},
+		switchMode: function() {
+			this.previewMode = !this.previewMode;
+		}
 	},
 	mounted: function() {
-		var self = this;
-		$(document).ready(function() {
-			self.quill = new Quill('#editor', {
-				modules: {
-					toolbar: [
-						['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-						['blockquote', 'code-block'],
-
-						[{ 'header': 1 }, { 'header': 2 }],               // custom button values
-						[{ 'list': 'ordered'}, { 'list': 'bullet' }],
-						[{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-						[{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-						[{ 'direction': 'rtl' }],                         // text direction
-
-						[{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-						[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-						[{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-						[{ 'font': [] }],
-						[{ 'align': [] }],
-
-						['clean']                                         // remove formatting button
-					]
-				},
-				// scrollingContainer: ".card",
-				theme: 'snow',
-			});
-		})
-	}
+		//Load posts for editing?
+	},
+	computed: {
+		compiledMarkdown: function() {
+			return marked(this.body, {});
+		}
+	},
 }
 </script>
 
