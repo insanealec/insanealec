@@ -5,6 +5,7 @@ import Snake from './components/Snake'
 import Portfolio from './components/Portfolio'
 import Login from './components/Login'
 import Write from './components/Write'
+import Blog from './components/Blog'
 
 //Add your routes here, it gets added to the router.
 export default {
@@ -28,6 +29,10 @@ export default {
 		{
 			path: '/write',
 			component: Write
+		},
+		{
+			path: '/blog/:name',
+			component: Blog
 		},
 	]
 }

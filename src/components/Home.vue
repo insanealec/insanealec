@@ -2,7 +2,7 @@
 <div class="wide">
 	<div v-for="p in posts" class="card">
 		<div class="card-header">
-			{{p.title}}
+			<router-link :to="{path: '/blog/'+p.title}">{{p.title}}</router-link>
 		</div>
 		<div class="card-block">
 			<p v-html="compiledMarkdown(p.body)" class="card-text"></p>

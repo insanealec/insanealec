@@ -6,7 +6,7 @@
 		<button @click="switchMode()" class="preview">Preview Markdown</button>
 	</div>
 
-	<textarea v-show="!previewMode" v-model="body" id="editor"></textarea>
+	<textarea v-show="!previewMode" v-model="body"></textarea>
 	<div v-show="previewMode" v-html="compiledMarkdown"></div>
 
 	<button @click="saveContent" class="btn btn-primary">Save</button>
