@@ -7,6 +7,13 @@
 		<select v-model="currType">
 			<option v-for="t in types">{{t}}</option>
 		</select>
+
+		<!-- Load in content to edit. -->
+		<select v-model="chosenContent">
+			<option></option>
+			<option v-for="p in posts">{{p.title}}</option>
+			<option v-for="p in projects">{{p.title}}</option>
+		</select>
 	</div>
 
 	<textarea v-show="!previewMode" v-model="body"></textarea>
@@ -45,6 +52,7 @@ export default {
 				"projects",
 			],
 			currType: "posts",
+			chosenContent: "",
 		}
 	},
 	methods: {
@@ -64,10 +72,29 @@ export default {
 
 			//Using the current type, add this item with the necessary options.
 			database.ref(this.currType+'/'+this.title).set(options);
+			this.clearInputs();
 		},
 		switchMode: function() {
 			//Each switch sets an inverse of itself.
 			this.previewMode = !this.previewMode;
+		},
+		findIn: function(arr, title) {
+			let items = Object.keys(arr);
+			for(let i = 0; i < items.length; i++)
+			{
+				if(items[i] == title)
+				{
+					return arr[items[i]];
+				}
+			}
+			return false;
+		},
+		clearInputs: function() {
+			this.chosenContent = "";
+			this.title = "";
+			this.body = "";
+			this.link = "";
+			this.linkText = "";
 		}
 	},
 	mounted: function() {
@@ -84,8 +111,35 @@ export default {
 		compiledMarkdown: function() {
 			//Each preview mode toggle shows this computed prop.
 			return marked(this.body, {});
-		}
+		},
 	},
+	watch: {
+		chosenContent: function(c) {
+			//Search through the arrays.
+			let item = this.findIn(this.posts, c);
+			if(item)
+			{
+				this.currType = "posts";
+				this.title = item.title;
+				this.body = item.body;
+			}
+			item = this.findIn(this.projects, c);
+			if(item)
+			{
+				this.currType = "projects";
+				this.title = item.title;
+				this.body = item.body;
+				this.link = item.link;
+				this.linkText = item.linkText;
+			}
+
+			//Default case, clear inputs.
+			if(c == "")
+			{
+				this.clearInputs();
+			}
+		}
+	}
 }
 </script>
 
