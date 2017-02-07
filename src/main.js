@@ -24,7 +24,8 @@ window.database = firebase.database();
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-	routes: Routes.routes
+	routes: Routes.routes,
+	linkActiveClass: 'is-active'
 });
 
 /* eslint-disable no-new */
@@ -34,10 +35,3 @@ const app = new Vue({
   router,
 })
 
-
-//Stuff for jquery
-$(document).on('click','.navbar',function(e) {
-    if( $(e.target).is('a') ) {
-        $('.navbar-collapse').collapse('hide');
-    }
-});
