@@ -45,7 +45,7 @@ export default {
 				{
 					cutdown += markdownArr[i]+"\n\n";
 				}
-				cutdown += ...;
+				cutdown += "\n\n...\n\n**Read More** to see the rest...";
 			}
 			return marked(cutdown, {});
 		}
