@@ -1,7 +1,11 @@
 <template>
 <div class="card">
-	<div class="card-header">{{post.title}}</div>
-	<div class="card-block" v-html="compiledMarkdown(post.body)"></div>
+	<header class="card-header">
+		<p class="card-header-title">{{post.title}}</p>
+	</header>
+	<div class="card-content">
+		<div class="content" v-html="compiledMarkdown(post.body)"></div>
+	</div>
 </div>
 </template>
 

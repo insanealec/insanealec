@@ -2,11 +2,11 @@
 	<div id="app">
 		<VueNav></VueNav>
 		
-		<div class="container">
-			<div class="row">
+		<section class="section">
+			<div class="container">
 				<router-view></router-view>
 			</div>
-		</div>
+		</section>
 	</div>
 </template>
 
@@ -29,10 +29,6 @@ export default {
 		/*background-image: url('./assets/TobyAndCharlie.jpg');*/
 	}
 	.card {
-		width: 100%;
 		margin-bottom: 20px;
-	}
-	.wide {
-		width: 100%;
 	}
 </style>

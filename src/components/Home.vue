@@ -1,12 +1,21 @@
 <template>
-<div class="wide">
+<div class="">
 	<div v-for="p in posts" class="card">
-		<div class="card-header">
-			<router-link :to="{path: '/blog/'+p.title}">{{p.title}}</router-link>
+		<header class="card-header">
+			<h1 class="card-header-title">
+				{{p.title}}
+			</h1>
+		</header>
+		<div class="card-content">
+			<div class="content">
+				<p v-html="compiledMarkdown(p.body)" class="card-text"></p>
+			</div>
 		</div>
-		<div class="card-block">
-			<p v-html="compiledMarkdown(p.body)" class="card-text"></p>
-		</div>
+		<footer class="card-footer">
+			<router-link class="card-footer-item" :to="{path: '/blog/'+p.title}">
+				Read More
+			</router-link>
+		</footer>
 	</div>
 </div>
 </template>
@@ -21,7 +30,24 @@ export default {
 	},
 	methods: {
 		compiledMarkdown: function(md) {
-			return marked(md, {});
+			//In this case I only want a segment of the article.
+			const numLines = 3;
+			let markdownArr = md.split('\n\n');
+			const sizeOfArr = markdownArr.length;
+			let cutdown = "";
+			if(sizeOfArr <= numLines)
+			{
+				cutdown = md;
+			}
+			else
+			{
+				for (let i = 0; i < numLines; i++)
+				{
+					cutdown += markdownArr[i]+"\n\n";
+				}
+				cutdown += ...;
+			}
+			return marked(cutdown, {});
 		}
 	},
 	data: function() {
