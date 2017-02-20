@@ -1,17 +1,19 @@
 <template>
-<div class="wide">
+<div class="">
 	<div v-for="p in projects" class="card">
-		<div class="card-header">
-			{{p.title}}
-		</div>
-		<div class="card-block">
+		<header class="card-header">
+			<div class="card-header-title">
+				{{p.title}}
+			</div>
+		</header>
+		<div class="card-content">
 			<p v-html="compiledMarkdown(p.body)" class="card-text"></p>
 		</div>
-		<div class="card-footer">
-			<a :href="p.link" class="card-link">
+		<footer class="card-footer">
+			<a :href="p.link" class="card-footer-item">
 				{{p.linkText}}
 			</a>
-		</div>
+		</footer>
 	</div>
 </div>
 </template>

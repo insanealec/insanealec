@@ -1,9 +1,13 @@
 <template>
-<div class="wide">
+<div class="">
 	<!-- Login Card -->
 	<div class="card" v-if="!loggedIn">
-		<div class="card-header">Login</div>
-		<div class="card-block">
+		<header class="card-header">
+			<div class="card-header-title">
+				Login
+			</div>
+		</header>
+		<div class="card-content">
 			<div class="form-group">
 				<label for="email">Email</label>
 				<input v-model="email" type="email" class="form-control" id="email">
@@ -12,14 +16,20 @@
 				<label for="password">Password</label>
 				<input v-model="password" type="password" class="form-control" id="password">
 			</div>
-			<button @click="login" class="btn btn-primary" id="login">Submit</button>
 		</div>
+		<footer class="card-footer">
+			<button @click="login" class="btn btn-primary card-footer-item" id="login">Submit</button>
+		</footer>
 	</div>
 
 	<div class="card" v-if="loggedIn">
-		<div class="card-header">You are already logged in!</div>
-		<div class="card-block">
-			<p class="card-text">No logout yet.</p>
+		<header class="card-header">
+			<div class="card-header-title">
+				You are already logged in!
+			</div>
+		</header>
+		<div class="card-content">
+			<p class="content">No logout yet.</p>
 		</div>
 	</div>
 </div>

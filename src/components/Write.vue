@@ -1,37 +1,43 @@
 <template>
 <div class="card">
-	<div class="card-header">
-		Title:&nbsp;
-		<input v-model="title">
-		<button @click="switchMode()" class="preview">Preview Markdown</button>
-		<select v-model="currType">
-			<option v-for="t in types">{{t}}</option>
-		</select>
+	<header class="card-header">
+		<div class="card-header-title">
+			Title:&nbsp;
+			<input v-model="title">
+			<button @click="switchMode()" class="preview">Preview Markdown</button>
+			<select v-model="currType">
+				<option v-for="t in types">{{t}}</option>
+			</select>
 
-		<!-- Load in content to edit. -->
-		<select v-model="chosenContent">
-			<option></option>
-			<option v-for="p in posts">{{p.title}}</option>
-			<option v-for="p in projects">{{p.title}}</option>
-		</select>
-	</div>
-
-	<textarea v-show="!previewMode" v-model="body"></textarea>
-	<div v-show="previewMode" v-html="compiledMarkdown"></div>
-
-	<div v-if="currType=='projects'" class="project-group">
-		<div class="form-group">
-			<label for="linkText">Link Text</label>
-			<input v-model="linkText" id="linkText" class="form-control">
+			<!-- Load in content to edit. -->
+			<select v-model="chosenContent">
+				<option></option>
+				<option v-for="p in posts">{{p.title}}</option>
+				<option v-for="p in projects">{{p.title}}</option>
+			</select>
 		</div>
-		<div class="form-group">
-			<label for="link">Link</label>
-			<input v-model="link" id="link" class="form-control">
+	</header>
+
+	<div class="card-content">
+		<div class="content">
+			<textarea v-show="!previewMode" v-model="body"></textarea>
+			<div v-show="previewMode" v-html="compiledMarkdown"></div>
+
+			<div v-if="currType=='projects'" class="project-group">
+				<div class="form-group">
+					<label for="linkText">Link Text</label>
+					<input v-model="linkText" id="linkText" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="link">Link</label>
+					<input v-model="link" id="link" class="form-control">
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<div class="card-footer text-right">
-		<button @click="saveContent" class="btn btn-primary">Save</button>
+		<button @click="saveContent" class="button is-primary card-footer-item">Save</button>
 	</div>
 </div>
 </template>

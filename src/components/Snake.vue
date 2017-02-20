@@ -1,29 +1,33 @@
 <template>
-<div class="wide">
+<div class="">
     <div id="panelList">
 		<canvas id="canvas" width="450" height="450"></canvas>
 	</div>
 	<div class="card">
-		<div class="card-header" data-toggle="collapse" data-target="#gameInfo">
-			Play using keyboard arrows. Click here to expand this card for more info.
-		</div>
-		<div class="card-block collapse" id="gameInfo">
-			<h2 class="card-title">Best Score: {{ max_score }}</h2>
-			<p class="card-text">
-				This score only lasts as long as you are on the page.
+		<header class="card-header">
+			<p class="card-header-title">
+				Play using keyboard arrows. Click here to expand this card for more info.
 			</p>
-			<p class="card-text">
-				If you don't see the game, try refreshing the page.
-			</p>
-			<p class="card-text">
-				Code for javascript snake game was originally found
-				<a href="http://thecodeplayer.com/walkthrough/html5-game-tutorial-make-a-snake-game-using-html5-canvas-jquery">here</a>.
-			</p>
-			<p class="card-text">
-				But I altered it to work with Vue.js.
-				It's still not great, but you can find the code for this page
-				<a href="https://github.com/insanealec/insanealec/blob/master/src/components/Snake.vue">on my github</a>.
-			</p>
+		</header>
+		<div class="card-content">
+			<div class="content">
+				<h2 class="card-title">Best Score: {{ max_score }}</h2>
+				<p class="card-text">
+					This score only lasts as long as you are on the page.
+				</p>
+				<p class="card-text">
+					If you don't see the game, try refreshing the page.
+				</p>
+				<p class="card-text">
+					Code for javascript snake game was originally found
+					<a href="http://thecodeplayer.com/walkthrough/html5-game-tutorial-make-a-snake-game-using-html5-canvas-jquery">here</a>.
+				</p>
+				<p class="card-text">
+					But I altered it to work with Vue.js.
+					It's still not great, but you can find the code for this page
+					<a href="https://github.com/insanealec/insanealec/blob/master/src/components/Snake.vue">on my github</a>.
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
