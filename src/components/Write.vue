@@ -2,15 +2,17 @@
 <div class="card">
 	<header class="card-header">
 		<div class="card-header-title">
-			Title:&nbsp;
-			<input v-model="title">
-			<button @click="switchMode()" class="preview">Preview Markdown</button>
-			<select v-model="currType">
+			<label class="label">Title</label>
+			<p class="control">
+				<input class="input" v-model="title">
+			</p>
+			<button @click="switchMode()" class="preview button">Preview Markdown</button>
+			<select class="select" v-model="currType">
 				<option v-for="t in types">{{t}}</option>
 			</select>
 
 			<!-- Load in content to edit. -->
-			<select v-model="chosenContent">
+			<select class="select" v-model="chosenContent">
 				<option></option>
 				<option v-for="p in posts">{{p.title}}</option>
 				<option v-for="p in projects">{{p.title}}</option>
@@ -20,18 +22,23 @@
 
 	<div class="card-content">
 		<div class="content">
-			<textarea v-show="!previewMode" v-model="body"></textarea>
+
+			<label class="label">Body</label>
+			<p class="control">
+				<textarea class="textarea" v-show="!previewMode" v-model="body"></textarea>
+			</p>
+
 			<div v-show="previewMode" v-html="compiledMarkdown"></div>
 
 			<div v-if="currType=='projects'" class="project-group">
-				<div class="form-group">
-					<label for="linkText">Link Text</label>
-					<input v-model="linkText" id="linkText" class="form-control">
-				</div>
-				<div class="form-group">
-					<label for="link">Link</label>
-					<input v-model="link" id="link" class="form-control">
-				</div>
+				<label class="label">Link Text</label>
+				<p class="control">
+					<input class="input" v-model="linkText" id="linkText">
+				</p>
+				<label class="label">Link</label>
+				<p class="control">
+					<input class="input" v-model="link" id="link">
+				</p>
 			</div>
 		</div>
 	</div>
@@ -150,4 +157,10 @@ export default {
 </script>
 
 <style scoped>
+.card-header-title .label {
+	margin-bottom: 0px;
+}
+.card-header-title .control {
+	margin-bottom: 0px;
+}
 </style>
