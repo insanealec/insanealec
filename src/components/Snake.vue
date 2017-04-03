@@ -1,15 +1,15 @@
 <template>
 <div class="">
-    <div id="panelList">
+    <div id="panelList" class="image is-400by400">
 		<canvas id="canvas" width="450" height="450"></canvas>
 	</div>
 	<div class="card">
 		<header class="card-header">
-			<p class="card-header-title">
+			<p class="card-header-title" @click="displayInfo=!displayInfo">
 				Play using keyboard arrows. Click here to expand this card for more info.
 			</p>
 		</header>
-		<div class="card-content">
+		<div class="card-content" v-if="displayInfo">
 			<div class="content">
 				<h2 class="card-title">Best Score: {{ max_score }}</h2>
 				<p class="card-text">
@@ -61,6 +61,7 @@ export default{
 			snake_array: [],
 			//The best score for this play session.
 			max_score: 0,
+			displayInfo: false,
 		};
 	},
 	methods: {
