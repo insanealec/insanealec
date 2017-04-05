@@ -28,6 +28,11 @@ const router = new VueRouter({
 	linkActiveClass: 'is-active'
 });
 
+router.afterEach((to, from) => {
+  ga('set', 'page', to.path);
+  ga('send', 'pageview');
+});
+
 /* eslint-disable no-new */
 const app = new Vue({
   el: '#app',
