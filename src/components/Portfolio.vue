@@ -6,7 +6,7 @@
 				{{p.title}}
 			</div>
 		</header>
-		<div class="card-content">
+		<div class="card-content content">
 			<p v-html="compiledMarkdown(p.body)" class="card-text"></p>
 		</div>
 		<footer class="card-footer">

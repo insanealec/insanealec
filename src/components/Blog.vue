@@ -3,7 +3,7 @@
 	<header class="card-header">
 		<p class="card-header-title">{{post.title}}</p>
 	</header>
-	<div class="card-content">
+	<div class="card-content content">
 		<div class="content" v-html="compiledMarkdown(post.body)"></div>
 	</div>
 </div>
